@@ -8,7 +8,7 @@
 
 */
 
-function pattern2(n) {
+function pattern3(n) {
   let result = "";
   for (let row = 1; row <= n; row++) {
     for (let col = row; col <= n; col++) {
@@ -19,4 +19,4 @@ function pattern2(n) {
   return result;
 }
 
-console.log(pattern2(5));
+console.log(pattern3(5));
