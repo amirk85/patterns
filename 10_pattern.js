@@ -1,11 +1,10 @@
 /*
 
-     *
-    **
-   ***
-  ****
- *****
-
+         *
+        * *
+       * * *
+      * * * *
+     * * * * *
 
 */
 
@@ -16,7 +15,7 @@ function pattern(n) {
       result += " ";
     }
     for (let col = 1; col <= row; col++) {
-      result += "*";
+      result += "* ";
     }
     if (row !== n) result += "\n";
   }

@@ -8,7 +8,7 @@
 
 */
 
-function pattern8(n) {
+function pattern(n) {
   let result = "";
   for (let row = 1; row <= n; row++) {
     for (let space = 1; space <= n - row; space++) {
@@ -22,4 +22,4 @@ function pattern8(n) {
   return result;
 }
 
-console.log(pattern8(5));
+console.log(pattern(5));

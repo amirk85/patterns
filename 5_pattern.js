@@ -12,7 +12,7 @@
 
 */
 
-function pattern5(n) {
+function pattern(n) {
   let result = "";
   for (let row = 1; row < n * 2; row++) {
     const printCol = row < n ? row : n * 2 - row;
@@ -24,4 +24,4 @@ function pattern5(n) {
   return result;
 }
 
-console.log(pattern5(5));
+console.log(pattern(5));
