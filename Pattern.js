@@ -248,30 +248,80 @@ class Main {
     return result;
   }
 
-  static pattern18(n = 4) {
+  static pattern18(n = 5) {
     let result = "";
-    for (let row = 1; row <= n * 2 - 1; row++) {
-      // spaces
+    for (let row = 1; row <= n * 2; row++) {
+      const printCol = row <= n ? n - row + 1 : row - n;
+      for (let col = 1; col <= printCol; col++) {
+        result += "*";
+      }
 
-      const printSpaces = row <= n ? n - row : row - n;
-      for (let space = 1; space <= printSpaces; space++) {
+      // spaces
+      for (let space = 1; space <= 2 * (n - printCol); space++) {
         result += " ";
       }
 
-      // Numbers
-
-      for (let col = n - printSpaces; col >= 1; col--) {
-        result += col;
+      for (let col = 1; col <= printCol; col++) {
+        result += "*";
       }
 
-      for (let col = 2; col <= n - printSpaces; col++) {
-        result += col;
+      if (row !== n * 2) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern19(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n * 2 - 1; row++) {
+      const printCol = row <= n ? row : 2 * n - row;
+
+      // stars
+      for (let col = 1; col <= printCol; col++) {
+        result += "*";
       }
 
+      // spaces
+      for (let space = 1; space <= 2 * (n - printCol); space++) {
+        result += " ";
+      }
+
+      // stars
+      for (let col = 1; col <= printCol; col++) {
+        result += "*";
+      }
       if (row !== n * 2 - 1) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern20(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= n; col++) {
+        if (row === 1 || row === n || col === 1 || col === n) {
+          result += "*";
+        } else result += " ";
+      }
+
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern20(n = 5) {
+    let result = "";
+    let num = 1;
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= row; col++) {
+        result += num + " ";
+        if (num <= 9) result += " ";
+        num++;
+      }
+
+      if (row !== n) result += "\n";
     }
     return result;
   }
 }
 
-console.log(Main.pattern18());
+console.log(Main.pattern20());
