@@ -308,7 +308,7 @@ class Main {
     return result;
   }
 
-  static pattern20(n = 5) {
+  static pattern21(n = 5) {
     let result = "";
     let num = 1;
     for (let row = 1; row <= n; row++) {
@@ -322,6 +322,19 @@ class Main {
     }
     return result;
   }
+
+  static pattern22(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= row; col++) {
+        const num = row + col + 1;
+        result += (num % 2) + " ";
+      }
+
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
 }
 
-console.log(Main.pattern20());
+console.log(Main.pattern22());
