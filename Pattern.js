@@ -335,6 +335,96 @@ class Main {
     }
     return result;
   }
+
+  static pattern23(n = 3) {
+    let result = "";
+
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= n * 2 - 1; col++) {
+        col === n - row + 1 || col === n + row - 1
+          ? (result += " *")
+          : (result += "  ");
+      }
+      for (let col = 1; col <= n * 2 - 1; col++) {
+        (row !== n && col === n - row + 1) || col === n + row - 1
+          ? (result += "* ")
+          : (result += "  ");
+      }
+
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern24(n = 5) {
+    let result = "";
+
+    for (let row = 1; row <= n * 2; row++) {
+      for (let col = 1; col <= n * 2; col++) {
+        const printX = col === row || col === 2 * n - row + 1;
+        if (printX || col == 1 || col === n * 2) {
+          result += "*";
+        } else result += " ";
+      }
+
+      if (row !== n * 2) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern25(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      // spaces
+
+      for (let space = 1; space <= n - row; space++) {
+        result += " ";
+      }
+
+      // stars
+      for (let col = 1; col <= n; col++) {
+        if (row === 1 || row === n || col === 1 || col === n) {
+          result += "*";
+        } else result += " ";
+      }
+
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern26(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= n - row + 1; col++) {
+        result += row + " ";
+      }
+
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern27(n = 5) {
+    let result = "";
+
+    for (let row = 1; row <= n * 2 - 1; row++) {
+      // spaces
+
+      const printSpaces = row <= n ? n - row : row - n;
+      for (let space = 1; space <= printSpaces; space++) {
+        result += " ";
+      }
+
+      // stars
+      for (let col = 1; col <= n - printSpaces; col++) {
+        result += " *";
+      }
+
+      if (row !== n * 2 - 1) result += "\n";
+    }
+    return result;
+  }
 }
 
-console.log(Main.pattern22());
+console.log(Main.pattern27());
