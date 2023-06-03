@@ -429,6 +429,64 @@ class Main {
   static pattern29(n = 5) {
     return this.pattern19(n);
   }
+
+  static pattern30(n = 5) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      // spaces
+      for (let space = 1; space <= n - row; space++) {
+        result += "  ";
+      }
+
+      // numbers
+      for (let col = row; col >= 1; col--) {
+        result += col + " ";
+      }
+
+      for (let col = 2; col <= row; col++) {
+        result += col + " ";
+      }
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattenr31(n = 4) {
+    let result = "";
+    const orgN = n;
+    n = n * 2 - 1;
+    for (let row = 1; row <= n; row++) {
+      for (let col = 1; col <= n; col++) {
+        const num = orgN - Math.min(row, col, n - col + 1, n - row + 1) + 1;
+        result += num + " ";
+      }
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
+
+  static pattern35(n = 4) {
+    let result = "";
+    for (let row = 1; row <= n; row++) {
+      // numbers
+      for (let col = 1; col <= row; col++) {
+        result += col;
+      }
+      // spaces
+
+      for (let space = 1; space <= 2 * (n - row); space++) {
+        result += " ";
+      }
+
+      // numbers
+
+      for (let col = row; col >= 1; col--) {
+        result += col;
+      }
+      if (row !== n) result += "\n";
+    }
+    return result;
+  }
 }
 
-console.log(Main.pattern29());
+console.log(Main.pattern35());
