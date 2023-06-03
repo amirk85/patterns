@@ -405,7 +405,7 @@ class Main {
     return result;
   }
 
-  static pattern27(n = 5) {
+  static pattern28(n = 5) {
     let result = "";
 
     for (let row = 1; row <= n * 2 - 1; row++) {
@@ -425,6 +425,10 @@ class Main {
     }
     return result;
   }
+
+  static pattern29(n = 5) {
+    return this.pattern19(n);
+  }
 }
 
-console.log(Main.pattern27());
+console.log(Main.pattern29());
